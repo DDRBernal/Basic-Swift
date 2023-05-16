@@ -18,6 +18,8 @@
 		63C8B25E2A1280090074B299 /* formView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8B25D2A1280090074B299 /* formView.swift */; };
 		63C8B2632A1292110074B299 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 63C8B2622A1292110074B299 /* CodeScanner */; };
 		63C8B2652A129C5A0074B299 /* ScannerQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8B2642A129C5A0074B299 /* ScannerQRView.swift */; };
+		63C8B2672A13D5BE0074B299 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8B2662A13D5BE0074B299 /* ActivityViewController.swift */; };
+		63C8B2692A13E75A0074B299 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63C8B2682A13E7590074B299 /* image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		63C8B25B2A0EFDB10074B299 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		63C8B25D2A1280090074B299 /* formView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formView.swift; sourceTree = "<group>"; };
 		63C8B2642A129C5A0074B299 /* ScannerQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerQRView.swift; sourceTree = "<group>"; };
+		63C8B2662A13D5BE0074B299 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		63C8B2682A13E7590074B299 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image.jpg; path = Assets.xcassets/image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +110,13 @@
 				63312B362A0ED37A00501DEE /* login_testApp.swift */,
 				63312B382A0ED37A00501DEE /* ContentView.swift */,
 				63312B3A2A0ED37C00501DEE /* Assets.xcassets */,
+				63C8B2682A13E7590074B299 /* image.jpg */,
 				63312B3C2A0ED37C00501DEE /* login_test.entitlements */,
 				63312B3D2A0ED37C00501DEE /* Preview Content */,
 				63C8B25B2A0EFDB10074B299 /* ScannerViewController.swift */,
 				63C8B25D2A1280090074B299 /* formView.swift */,
 				63C8B2642A129C5A0074B299 /* ScannerQRView.swift */,
+				63C8B2662A13D5BE0074B299 /* ActivityViewController.swift */,
 			);
 			path = login_test;
 			sourceTree = "<group>";
@@ -252,6 +258,7 @@
 			files = (
 				63312B3F2A0ED37C00501DEE /* Preview Assets.xcassets in Resources */,
 				63312B3B2A0ED37C00501DEE /* Assets.xcassets in Resources */,
+				63C8B2692A13E75A0074B299 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C8B25E2A1280090074B299 /* formView.swift in Sources */,
+				63C8B2672A13D5BE0074B299 /* ActivityViewController.swift in Sources */,
 				63312B392A0ED37A00501DEE /* ContentView.swift in Sources */,
 				63C8B25C2A0EFDB10074B299 /* ScannerViewController.swift in Sources */,
 				63312B372A0ED37A00501DEE /* login_testApp.swift in Sources */,
