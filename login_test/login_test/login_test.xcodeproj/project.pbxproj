@@ -20,8 +20,6 @@
 		6397C16A2A15622500B628F5 /* CameraUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397C1692A15622500B628F5 /* CameraUIView.swift */; };
 		6397C16C2A15926200B628F5 /* camera-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6397C16B2A15926200B628F5 /* camera-logo.jpg */; };
 		6397C16E2A15942A00B628F5 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6397C16D2A15942A00B628F5 /* image.jpg */; };
-		6397C1702A15957900B628F5 /* camera-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6397C16F2A15957800B628F5 /* camera-logo.jpg */; };
-		6397C1722A1595BF00B628F5 /* camera-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6397C1712A1595BF00B628F5 /* camera-logo.jpg */; };
 		63C8B25C2A0EFDB10074B299 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8B25B2A0EFDB10074B299 /* ScannerViewController.swift */; };
 		63C8B25E2A1280090074B299 /* formView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8B25D2A1280090074B299 /* formView.swift */; };
 		63C8B2632A1292110074B299 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 63C8B2622A1292110074B299 /* CodeScanner */; };
@@ -64,8 +62,6 @@
 		6397C1692A15622500B628F5 /* CameraUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUIView.swift; sourceTree = "<group>"; };
 		6397C16B2A15926200B628F5 /* camera-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "camera-logo.jpg"; sourceTree = "<group>"; };
 		6397C16D2A15942A00B628F5 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
-		6397C16F2A15957800B628F5 /* camera-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "camera-logo.jpg"; sourceTree = "<group>"; };
-		6397C1712A1595BF00B628F5 /* camera-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "camera-logo.jpg"; sourceTree = "<group>"; };
 		63C8B25B2A0EFDB10074B299 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		63C8B25D2A1280090074B299 /* formView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formView.swift; sourceTree = "<group>"; };
 		63C8B2642A129C5A0074B299 /* ScannerQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerQRView.swift; sourceTree = "<group>"; };
@@ -121,7 +117,6 @@
 		63312B352A0ED37A00501DEE /* login_test */ = {
 			isa = PBXGroup;
 			children = (
-				6397C1712A1595BF00B628F5 /* camera-logo.jpg */,
 				6397C16D2A15942A00B628F5 /* image.jpg */,
 				6397C16B2A15926200B628F5 /* camera-logo.jpg */,
 				63312B362A0ED37A00501DEE /* login_testApp.swift */,
@@ -145,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				63312B3E2A0ED37C00501DEE /* Preview Assets.xcassets */,
-				6397C16F2A15957800B628F5 /* camera-logo.jpg */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -279,8 +273,6 @@
 			files = (
 				63312B3F2A0ED37C00501DEE /* Preview Assets.xcassets in Resources */,
 				6397C16C2A15926200B628F5 /* camera-logo.jpg in Resources */,
-				6397C1702A15957900B628F5 /* camera-logo.jpg in Resources */,
-				6397C1722A1595BF00B628F5 /* camera-logo.jpg in Resources */,
 				63312B3B2A0ED37C00501DEE /* Assets.xcassets in Resources */,
 				6397C16E2A15942A00B628F5 /* image.jpg in Resources */,
 			);
