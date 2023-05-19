@@ -29,9 +29,52 @@ struct formView: View {
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
+    @State private var isShareSheetPresented = false
     
     var body: some View {
+        TabView{
         Form {
+            Section(header: Text("Settings camera")) {
+                VStack {
+                    Spacer()
+                    NavigationLink(
+                        destination: CameraUIView(),
+                        isActive: $sendForm,
+                        label: {
+                            Image(systemName: "camera")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 18, height: 18)
+                                .padding()
+                            Text("Camera")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                        }
+                    ).frame(height: 1)
+                    Spacer().frame(height: 50)
+                    
+                    NavigationLink(
+                        destination: ScannerQRView(),
+                        isActive: $sendForm,
+                        label: {
+                            Image(systemName: "camera")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 18, height: 18)
+                                .padding()
+                            Text("Scanner")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                        }
+                    ).frame(height: 1)
+                    Spacer()
+                }.navigationBarTitle("Home")
+            }
+            
             Section(header: Text("Settings")) {
                 TextField("Device Name", text: $name)
                 if (name.isEmpty && !isFormValid){
@@ -41,17 +84,6 @@ struct formView: View {
                 if (!isNetworkOn){
                     Text("Wifi must be on").foregroundColor(.red)
                 }
-                Button("Share") {
-                            isShowingActivityView = true
-                        }
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
-                        .sheet(isPresented: $isShowingActivityView, content: {
-                            ActivityViewController(activityItems: [image!])
-                        })
             }
             
             Section(header: Text("Account")) {
@@ -66,10 +98,10 @@ struct formView: View {
             Section(header: Text("Contact"),
                     footer:
                         HStack {
-                            Spacer()
-                            Label("version 1.0",
-                                  systemImage: "iphone")
-                            Spacer()
+                Spacer()
+                Label("version 1.0",
+                      systemImage: "iphone")
+                Spacer()
             }) {
                 TextEditor(text: $contactMessage)
                 VStack {
@@ -83,57 +115,84 @@ struct formView: View {
                     
                 }
                 VStack{
-                    TextField("asd", text: $api_result)
+                    TextField("Here will appears the API result", text: $api_result)
                     if api_button_clicked{
                         Text("clicked").foregroundColor(.green)
                     }else{
                         Button(action:{api_call(method: "get")}){
-                            Text("press")
+                            Text("Get API test Json")
                         }
                     }
                 }
-                VStack {
-                    Spacer()
-                    
-                    NavigationLink(
-                        destination: CameraUIView(),
-                        isActive: $sendForm,
-                        label: {
-                            Image("camera-logo") // Replace "yourImageName" with the name of your image asset
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 10, height: 10)
-                                .padding()
-                        })
-                    
-                    Spacer()
-                }
-                .navigationBarTitle("Home")
             };
-            Section(header: Text("Read QR"),
-                     footer:
-                         HStack {
-                             Spacer()
-                             Label("version 1.0",
-                                   systemImage: "iphone")
-                             Spacer()
+            Section(header: Text("Share Section"),
+                    footer:
+                        HStack {
+                Spacer()
+                Label("version 1.0",
+                      systemImage: "iphone")
+                Spacer()
             }) {
                 VStack {
-                    Spacer()
-                    Button("Scanner QR View ") {
-                        sendFormButton()
-                    }.disabled(!isFormValid) //If form is not valid disable the button
-                    NavigationLink(destination: ScannerQRView(),
-                                   isActive: $sendForm){
-                        EmptyView()
+                    Button(action: {
+                        isShareSheetPresented = true
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                            .imageScale(.large)
+                            .foregroundColor(.blue)
                     }
+                    .padding(10)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    .shadow(radius: 2)
+                    .alignmentGuide(.trailing, computeValue: { _ in
+                        UIScreen.main.bounds.width - 30
+                    })
+                    .sheet(isPresented: $isShowingActivityView, content: {
+                        ActivityViewController(activityItems: [image!])
+                    })
+                    Text("Share image")
                 }
+                
             }
             
-        }.onChange(of: name, perform: { _ in
+        }//end form
+        .onChange(of: name, perform: { _ in
             validateForm() // Call the validation function whenever the name changes
-        })
+        })//This part will creates the tab bar below the app
+            .tabItem{Label("Account Settings", systemImage: "gear")}
+                //Another tab
+                Text("Second Tab Content")
+                .tabItem{
+                    //Here is the image of the icon that appears in tab bar
+                    Label("App Settings",systemImage: "square.and.pencil")
+                }
+                //Here below it contains the content of the tab
+                VStack {
+                    Button(action: {
+                        isShareSheetPresented = true
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                            .imageScale(.large)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(10)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    .shadow(radius: 2)
+                    .alignmentGuide(.trailing, computeValue: { _ in
+                        UIScreen.main.bounds.width - 30
+                    })
+                    .sheet(isPresented: $isShowingActivityView, content: {
+                        ActivityViewController(activityItems: [image!])
+                    })
+                    Text("Share image")
+                }//
+                .tabItem{
+                    Label("Share content",systemImage: "gear")
+                }
+                
+        }
     }
     
     /*
@@ -221,3 +280,15 @@ struct formView: View {
     }
     
 }
+
+struct ShareSheet: UIViewControllerRepresentable {
+    var activityItems: [Any]
+    
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
+}
+
